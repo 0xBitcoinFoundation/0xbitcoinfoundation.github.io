@@ -35295,7 +35295,7 @@ function generateHoldersGraph(holders, minted) {
 
 async function getTokenHolders() {
   return new Promise((resolve, reject) => {
-    $.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent('https://bloxy.info/api/token/token_holders_list?token=0xb6ed7644c69416d67b522e20bc294a9a9b405b31&limit=100&key=ACCl2UPf2Pgqi&format=table') + '&callback=?', function (data) {
+    $.getJSON('https://bloxy.info/api/token/token_holders_list?token=0xb6ed7644c69416d67b522e20bc294a9a9b405b31&limit=100&key=ACCl2UPf2Pgqi&format=table', function (data) {
       resolve(JSON.parse(data.contents));
     });
   });
