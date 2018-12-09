@@ -34377,7 +34377,7 @@ class Fundraiser {
 
     init() {
         console.log('Loading fundraiser');
-        this.loadFundraiserData();
+        //  this.loadFundraiserData();
     }
 
     //move me
@@ -34400,19 +34400,20 @@ class Fundraiser {
         }, 33.333);
     }
 
-    loadFundraiserData() {
-        let element_id = "fundraiser-progress-bar";
-        let address = "0xc22E34923F14f1663DdAB4956F92784DD4FE360a";
-        let name = "CCN Donation Fund";
-        let goal_balance_eth = 9;
-        this.getEthBalance(address).then(result => {
-            return 100 * Number(this.Eth.fromWei(result, "ether")) / goal_balance_eth;
-        }).then(result => {
-            this.moveProgressBar(result, element_id);
-        }).catch(error => {
-            console.log("err", error);
-        });
-    }
+    //   loadFundraiserData() {
+    //    let element_id = "fundraiser-progress-bar";
+    //    let address = "0xc22E34923F14f1663DdAB4956F92784DD4FE360a";
+    //    let name = "CCN Donation Fund";
+    //    let goal_balance_eth = 9;
+    //    this.getEthBalance(address).then((result) => {
+    //        return 100 * Number(this.Eth.fromWei(result, "ether")) / goal_balance_eth
+    //    }).then((result) => {
+    //        this.moveProgressBar(result, element_id)
+    //    }).catch((error) => {
+    //        console.log("err", error)
+    //    });
+    //}
+
 
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Fundraiser;
@@ -35294,7 +35295,7 @@ function generateHoldersGraph(holders, minted) {
 
 async function getTokenHolders() {
   return new Promise((resolve, reject) => {
-    $.getJSON('https://www.whateverorigin.org/get?url=' + encodeURIComponent('https://bloxy.info/api/token/token_holders_list?token=0xb6ed7644c69416d67b522e20bc294a9a9b405b31&limit=100&key=ACCl2UPf2Pgqi&format=table') + '&callback=?', function (data) {
+    $.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent('https://bloxy.info/api/token/token_holders_list?token=0xb6ed7644c69416d67b522e20bc294a9a9b405b31&limit=100&key=ACCl2UPf2Pgqi&format=table') + '&callback=?', function (data) {
       resolve(JSON.parse(data.contents));
     });
   });
@@ -35932,7 +35933,7 @@ class TokenStats {
 
   async getAPIData() {
     return new Promise((resolve, reject) => {
-      $.getJSON('https://api.0xbtc.io', function (data) {
+      $.getJSON('http://api.0xbtc.io', function (data) {
         resolve(data);
       });
     });
