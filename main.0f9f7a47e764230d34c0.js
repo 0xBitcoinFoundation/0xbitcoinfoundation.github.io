@@ -35933,7 +35933,7 @@ class TokenStats {
 
   async getAPIData() {
     return new Promise((resolve, reject) => {
-      $.getJSON('http://api.0xbtc.io', function (data) {
+      $.getJSON('https://api.etherscan.io/api?module=contract&action=getabi&address=0xB6eD7644C69416d67B522e20bC294A9a9B405B31&apikey=WWYHR7NFZ7F8Z27U6GS6NAN7QW1A685BNE', function (data) {
         resolve(data);
       });
     });
