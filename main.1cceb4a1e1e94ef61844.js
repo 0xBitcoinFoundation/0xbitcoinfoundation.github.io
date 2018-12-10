@@ -32344,7 +32344,7 @@ var require;var require;/*!
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(6);
-module.exports = __webpack_require__(19);
+module.exports = __webpack_require__(18);
 
 
 /***/ }),
@@ -32354,7 +32354,6 @@ module.exports = __webpack_require__(19);
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_fundraiser__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__template_tokenStats__ = __webpack_require__(18);
 
 
 const Eth = __webpack_require__(0);
@@ -32370,17 +32369,18 @@ const main = __webpack_require__(12);
 
 
 const mineable_token = __webpack_require__(14);
+//import TokenStats from './template/tokenStats'
 
 
 let fundraiser = new __WEBPACK_IMPORTED_MODULE_0__template_fundraiser__["a" /* default */](Eth);
-let tokenStats = new __WEBPACK_IMPORTED_MODULE_1__template_tokenStats__["a" /* default */]();
+//let tokenStats = new TokenStats();
 
 $(document).ready(function () {
   console.log("DOMready");
 
   fundraiser.init();
 
-  tokenStats.init();
+  //  tokenStats.init();
 });
 
 /***/ }),
@@ -35295,7 +35295,7 @@ function generateHoldersGraph(holders, minted) {
 
 async function getTokenHolders() {
   return new Promise((resolve, reject) => {
-    $.getJSON('https://bloxy.info/api/token/token_holders_list?token=0xb6ed7644c69416d67b522e20bc294a9a9b405b31&limit=100&key=ACCl2UPf2Pgqi&format=table', function (data) {
+    $.getJSON('http://api.allorigins.ml/get?url=' + encodeURIComponent('https://bloxy.info/api/token/token_holders_list?token=0xb6ed7644c69416d67b522e20bc294a9a9b405b31&limit=100&key=ACCl2UPf2Pgqi&format=table') + '&callback=?', function (data) {
       resolve(JSON.parse(data.contents));
     });
   });
@@ -35908,43 +35908,6 @@ module.exports.tokenABI = tokenABI;
 
 /***/ }),
 /* 18 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-class TokenStats {
-
-  init() {
-    console.log('Loading token stats');
-    this.loadTokenStats();
-  }
-
-  //move me
-
-
-  async loadTokenStats() {
-    console.log('loading token stats');
-
-    let elem = document.getElementById('tokenStats');
-
-    var tokenStats = await this.getAPIData();
-    console.log('loaded stats', tokenStats);
-  }
-
-  async getAPIData() {
-    return new Promise((resolve, reject) => {
-      $.getJSON('https://api.etherscan.io/api?module=contract&action=getabi&address=0xB6eD7644C69416d67B522e20bC294A9a9B405B31&apikey=WWYHR7NFZ7F8Z27U6GS6NAN7QW1A685BNE', function (data) {
-        resolve(data);
-      });
-    });
-  }
-
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = TokenStats;
-
-
-/***/ }),
-/* 19 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
