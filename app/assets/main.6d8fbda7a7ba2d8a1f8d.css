@@ -13102,6 +13102,15 @@ article {
 #welcomeArea {
   background: #ff7f00; }
 
+#welcomeArea .carousel-inner .img-fluid {
+  width: 600px;
+  height: 125px;
+  display: inline-block;
+  border-radius: 4px;
+  margin-top: 48px;
+  max-width: 100%;
+  height: auto; }
+
 #welcomeArea .topcontent {
   padding: 75px 0px 75px; }
 
@@ -13397,7 +13406,8 @@ tbody .tr:first-child td {
 13. Foundation Board members Area Start
 =================================================*/
 #investors {
-  background: #fff; }
+  color: #000000;
+  background-color: #ffffff; }
 
 #investors .heading-title h2 {
   margin-bottom: 10px; }
