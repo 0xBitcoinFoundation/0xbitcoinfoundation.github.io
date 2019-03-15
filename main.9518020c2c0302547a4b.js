@@ -2233,10 +2233,10 @@
           };
 
           /*
-           var zeros = [];
+            var zeros = [];
           var groupSizes = [];
           var groupBases = [];
-           var s = '';
+            var s = '';
           var i = -1;
           while (++i < BN.wordSize) {
             zeros[i] = s;
@@ -2257,7 +2257,7 @@
             groupSizes[base] = groupSize;
             groupBases[base] = groupBase;
           }
-           */
+            */
 
           var zeros = ['', '0', '00', '000', '0000', '00000', '000000', '0000000', '00000000', '000000000', '0000000000', '00000000000', '000000000000', '0000000000000', '00000000000000', '000000000000000', '0000000000000000', '00000000000000000', '000000000000000000', '0000000000000000000', '00000000000000000000', '000000000000000000000', '0000000000000000000000', '00000000000000000000000', '000000000000000000000000', '0000000000000000000000000'];
 
@@ -35307,7 +35307,7 @@ function generateHoldersGraph(holders, minted) {
 
 async function getTokenHolders() {
   return new Promise((resolve, reject) => {
-    $.getJSON('https://api.allorigins.ml/get?url=' + encodeURIComponent('https://bloxy.info/api/token/token_holders_list?token=0xb6ed7644c69416d67b522e20bc294a9a9b405b31&limit=1000&key=ACCl2UPf2Pgqi&format=table') + '&callback=?', function (data) {
+    $.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent('https://bloxy.info/api/token/token_holders_list?token=0xb6ed7644c69416d67b522e20bc294a9a9b405b31&limit=500&key=ACCl2UPf2Pgqi&format=table') + '&callback=?', function (data) {
       resolve(JSON.parse(data.contents));
     });
   });
