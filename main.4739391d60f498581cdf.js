@@ -34755,8 +34755,8 @@ var mineable_token = new __WEBPACK_IMPORTED_MODULE_0_vue__["default"]({
   methods: {
     updateHashrateGraph: function () {
       let SECONDS_PER_ETH_BLOCK = 14;
-      let GRAPH_HISTORY_DAYS = 30;
-      let GRAPH_NUM_POINTS = 30;
+      let GRAPH_HISTORY_DAYS = 1;
+      let GRAPH_NUM_POINTS = 24;
       this._eth.blockNumber().then(result => {
         let current_eth_block = parseInt(result.toString(10));
         let earliest_eth_block = current_eth_block - GRAPH_HISTORY_DAYS * 24 * 3600 / SECONDS_PER_ETH_BLOCK;
